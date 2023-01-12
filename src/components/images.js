@@ -11,9 +11,15 @@ import BaseImage from "./baseImage";
 import uniqid from "uniqid";
 
 function Images(props) {
+  // destructure
+  const { clickHandler } = props;
+
+  // shuffles images after only the first render
   useEffect(() => {
     setImages((images = shuffleImgs(images)));
   }, []);
+
+  // all the moon images... thinking about passing this from gameboard as props
   let [images, setImages] = useState([
     { img: firstQuarter, key: uniqid(), alt: "first quarter" },
     { img: fullMoon, key: uniqid(), alt: "full moon" },
@@ -25,6 +31,7 @@ function Images(props) {
     { img: waxingGibbous, key: uniqid(), alt: "waxing gibbous" },
   ]);
 
+  // shuffle function 'borrowed' from me and Chartleys cardgame
   function shuffleImgs(imageArray) {
     const copiedImages = [...imageArray];
     const shuffledImages = [];
@@ -36,6 +43,7 @@ function Images(props) {
     return shuffledImages;
   }
 
+  // map function to display all the BaseImages
   const displayImages = images.map((obj) => {
     return (
       <BaseImage
@@ -43,7 +51,7 @@ function Images(props) {
         src={obj.img}
         itemKey={obj.key}
         onClick={() => {
-          props.clickHandler(obj.key);
+          clickHandler(obj.key);
           setImages(shuffleImgs(images));
         }}
         alt={obj.alt}
@@ -51,6 +59,7 @@ function Images(props) {
     );
   });
 
+  // the JSX to return
   return <div>{displayImages}</div>;
 }
 
