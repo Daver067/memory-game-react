@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/memory-game-react/static/css/main.f74217ba.css",
-    "main.js": "/memory-game-react/static/js/main.de81ffc4.js",
+    "main.js": "/memory-game-react/static/js/main.3415ca0e.js",
     "static/js/787.e5aa7ed4.chunk.js": "/memory-game-react/static/js/787.e5aa7ed4.chunk.js",
     "static/media/waxingGibbous.png": "/memory-game-react/static/media/waxingGibbous.b3c243ba4d15ea9aa89b.png",
     "static/media/waningCrescent.png": "/memory-game-react/static/media/waningCrescent.566db1b4586b9737ee4a.png",
@@ -10,11 +10,11 @@
     "static/media/firstQuarter.png": "/memory-game-react/static/media/firstQuarter.cb88277546e3b894671a.png",
     "index.html": "/memory-game-react/index.html",
     "main.f74217ba.css.map": "/memory-game-react/static/css/main.f74217ba.css.map",
-    "main.de81ffc4.js.map": "/memory-game-react/static/js/main.de81ffc4.js.map",
+    "main.3415ca0e.js.map": "/memory-game-react/static/js/main.3415ca0e.js.map",
     "787.e5aa7ed4.chunk.js.map": "/memory-game-react/static/js/787.e5aa7ed4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f74217ba.css",
-    "static/js/main.de81ffc4.js"
+    "static/js/main.3415ca0e.js"
   ]
 }
