@@ -15,14 +15,14 @@ function Images(props) {
     setImages((images = shuffleImgs(images)));
   }, []);
   let [images, setImages] = useState([
-    { img: firstQuarter, key: uniqid() },
-    { img: fullMoon, key: uniqid() },
-    { img: newMoon, key: uniqid() },
-    { img: thirdQuarter, key: uniqid() },
-    { img: waningCrescent, key: uniqid() },
-    { img: waningGibbous, key: uniqid() },
-    { img: waxingCrescent, key: uniqid() },
-    { img: waxingGibbous, key: uniqid() },
+    { img: firstQuarter, key: uniqid(), alt: "first quarter" },
+    { img: fullMoon, key: uniqid(), alt: "full moon" },
+    { img: newMoon, key: uniqid(), alt: "new moon" },
+    { img: thirdQuarter, key: uniqid(), alt: "third quarter" },
+    { img: waningCrescent, key: uniqid(), alt: "waning crescent" },
+    { img: waningGibbous, key: uniqid(), alt: "waning gibbous" },
+    { img: waxingCrescent, key: uniqid(), alt: "waxing crescent" },
+    { img: waxingGibbous, key: uniqid(), alt: "waxing gibbous" },
   ]);
 
   function shuffleImgs(imageArray) {
@@ -36,81 +36,22 @@ function Images(props) {
     return shuffledImages;
   }
 
-  return (
-    <div>
+  const displayImages = images.map((obj) => {
+    return (
       <BaseImage
-        src={images[0].img}
+        key={obj.key}
+        src={obj.img}
+        itemKey={obj.key}
         onClick={() => {
-          console.log("clicked");
-          props.clickHandler(images[0].key);
+          props.clickHandler(obj.key);
           setImages(shuffleImgs(images));
         }}
+        alt={obj.alt}
       />
-      <BaseImage
-        src={images[1].img}
-        onClick={() => {
-          console.log("clicked");
+    );
+  });
 
-          props.clickHandler(images[1].key);
-          setImages(shuffleImgs(images));
-        }}
-      />
-      <BaseImage
-        src={images[2].img}
-        onClick={() => {
-          console.log("clicked");
-
-          props.clickHandler(images[2].key);
-          setImages(shuffleImgs(images));
-        }}
-      />
-      <BaseImage
-        src={images[3].img}
-        onClick={() => {
-          console.log("clicked");
-
-          props.clickHandler(images[3].key);
-          setImages(shuffleImgs(images));
-        }}
-      />
-      <BaseImage
-        src={images[4].img}
-        onClick={() => {
-          console.log("clicked");
-
-          props.clickHandler(images[4].key);
-          setImages(shuffleImgs(images));
-        }}
-      />
-      <BaseImage
-        src={images[5].img}
-        onClick={() => {
-          console.log("clicked");
-
-          props.clickHandler(images[5].key);
-          setImages(shuffleImgs(images));
-        }}
-      />
-      <BaseImage
-        src={images[6].img}
-        onClick={() => {
-          console.log("clicked");
-
-          props.clickHandler(images[6].key);
-          setImages(shuffleImgs(images));
-        }}
-      />
-      <BaseImage
-        src={images[7].img}
-        onClick={() => {
-          console.log("clicked");
-
-          props.clickHandler(images[7].key);
-          setImages(shuffleImgs(images));
-        }}
-      />
-    </div>
-  );
+  return <div>{displayImages}</div>;
 }
 
 export default Images;

@@ -1,7 +1,8 @@
 import React from "react";
 
 function BaseImage(props) {
-  return <img src={props.src} key={props.src} onClick={props.onClick}></img>;
+  const { src, onClick, alt } = props;
+  return <img src={src} onClick={onClick} alt={alt}></img>;
 }
 
 export default BaseImage;
